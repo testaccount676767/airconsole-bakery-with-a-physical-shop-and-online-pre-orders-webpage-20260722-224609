@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirConsole - Premium Breakfast Pre-Orders for CBD Professionals</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #D4A574;
+            --dark: #1a1a1a;
+            --light: #f9f7f4;
+            --accent: #2c3e50;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark);
+            background: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 0.7rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(212,165,116,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(212, 165, 116, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border: 2px solid var(--primary);
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--dark);
+        }
+
+        /* Features Section */
+        .features {
+            background: white;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--dark);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .feature-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Speed & Reliability */
+        .speed-section {
+            background: linear-gradient(135deg, var(--accent) 0%, #34495e 100%);
+            color: white;
+        }
+
+        .speed-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .speed-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .speed-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .stat-box {
+            background: rgba(212, 165, 116, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .speed-image {
+            background: linear-gradient(135deg, rgba(212,165,116,0.2) 0%, rgba(212,165,116,0.05) 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 4rem;
+        }
+
+        /* Artisan Quality */
+        .artisan-section {
+            background: white;
+        }
+
+        .artisan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .signature-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background: var(--light);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .signature-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.2);
+        }
+
+        .item-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #e8d5c4 0%, #d4a574 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .item-info {
+            padding: 1.5rem;
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .item-price {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        /* Pre-order Form */
+        .preorder-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #c99566 100%);
+            color: var(--dark);
+            text-align: center;
+        }
+
+        .preorder-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .preorder-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            background: var(--accent);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+        }
+
+        .form-reset {
+            background: transparent;
+            color: var(--accent);
+            padding: 1rem;
+            border: 2px solid var(--accent);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .form-reset:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-message.success {
+            background: rgba(39, 174, 96, 0.2);
+            color: var(--success);
+            display: block;
+        }
+
+        .form-message.error {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            display: block;
+        }
+
+        /* CBD Convenience */
+        .cbd-section {
+            background: white;
+        }
+
+        .cbd-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .cbd-image {
+            background: linear-gradient(135deg, #e8d5c4 0%, #d4a574 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        .cbd-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .convenience-list {
+            list-style: none;
+        }
+
+        .convenience-list li {
+            padding: 1rem 0;
+            padding-left: 3rem;
+            position: relative;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .convenience-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        /* Newsletter Signup */
+        .newsletter-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .newsletter-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .newsletter-form input {
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .newsletter-form button {
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: var(--dark);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(212, 165, 116, 0.3);
+        }
+
+        .newsletter-message {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .newsletter-message.show {
+            display: block;
+        }
+
+        /* Update Email Section */
+        .update-email-section {
+            background: var(--light);
+            border-top: 3px solid var(--primary);
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+        }
+
+        .update-email-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .update-email-form input {
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s;
+        }
+
+        .update-email-form input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .update-email-form button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            grid-column: 1 / -1;
+        }
+
+        .update-email-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3);
+        }
+
+        .update-email-message {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .update-email-message.success {
+            background: rgba(39, 174, 96, 0.2);
+            color: var(--success);
+            display: block;
+        }
+
+        .update-email-message.error {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            border-top: 2px solid var(--primary);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .speed-content,
+            .cbd-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .speed-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+            }
+
+            .form-buttons {
+                grid-template-columns: 1fr;
+            }
+
+            .update-email-form {
+                grid-template-columns: 1fr;
+            }
+
+            .update-email-form button {
+                grid-column: 1;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card {
+            animation: slideInUp 0.6s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <div class="logo">☕ AirConsole</div>
+            <ul class="nav-links">
+                <li><a href="#features">Why Us</a></li>
+                <li><a href="#speed">Speed</a></li>
+                <li><a href="#artisan">Menu</a></li>
+                <li><a href="#cbd">Locations</a></li>
+                <li><a href="#preorder">Order Now</a></li>
+            </ul>
+            <button class="cta-button" onclick="document.getElementById('preorder').scrollIntoView()">Pre-Order</button>
+            <button class="mobile-menu">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Premium Breakfast. Express Service.</h1>
+            <p>Artisan-crafted breakfast pre-orders ready when you are. Perfect for CBD professionals.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="document.getElementById('preorder').scrollIntoView()">Start Pre-Ordering</button>
+                <button class="btn-secondary" onclick="document.getElementById('newsletter').scrollIntoView()">View Weekly Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose AirConsole?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Pre-order in seconds, pick up in 5 minutes. No queues, no delays.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>100% Reliable</h3>
+                    <p>Consistent quality & timing, every single order. Guaranteed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🍳</div>
+                    <h3>Artisan Quality</h3>
+                    <p>Hand-crafted by experienced chefs using premium ingredients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speed & Reliability Section -->
+    <section id="speed" class="speed-section">
+        <div class="container">
+            <div class="speed-content">
+                <div class="speed-text">
+                    <h2>Speed Meets Reliability</h2>
+                    <p>In Singapore's fast-paced CBD, we understand your time is valuable. Our pre-order system ensures your breakfast is ready exactly when you need it.</p>
+                    <p style="margin-top: 1rem;">No compromises on quality. No waiting in line. Just perfect breakfast, on your schedule.</p>
+                    <div class="speed-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">5 min</div>
+                            <div class="stat-label">Average Pickup Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">99.8%</div>
+                            <div class="stat-label">On-Time Delivery</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Daily Orders</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Customer Rating</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="speed-image">
+                    ⏱️
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artisan Quality Section -->
+    <section id="artisan" class="artisan-section">
+        <div class="container">
+            <h2 class="section-title">Signature Creations</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Every item is carefully crafted with premium ingredients. Browse our gallery of artisan breakfast options.
+            </p>
+            <div class="artisan-grid">
+                <div class="signature-item">
+                    <div class="item-image">🥐</div>
+                    <div class="item-info">
+                        <div class="item-name">Butter Croissant</div>
+                        <div class="item-desc">Crispy, flaky, perfection</div>
+                        <div class="item-price">$6.50</div>
+                    </div>
+                </div>
+                <div class="signature-item">
+                    <div class="item-image">🍗</div>
+                    <div class="item-info">
+                        <div class="item-name">Fried Chicken Bake</div>
+                        <div class="item-desc">Savory & satisfying</div>
+                        <div class="item-price">$8.00</div>
+                    </div>
+                </div>
+                <div class="signature-item">
+                    <div class="item-image">🥑</div>
+                    <div class="item-info">
+                        <div class="item-name">Avocado Toast</div>
+                        <div class="item-desc">Organic sourdough & premium avocado</div>
+                        <div class="item-price">$9.50</div>
+                    </div>
+                </div>
+                <div class="signature-item">
+                    <div class="item-image">🫔</div>
+                    <div class="item-info">
+                        <div class="item-name">Spicy Egg Wrap</div>
+                        <div class="item-desc">Heat & flavor combined</div>
+                        <div class="item-price">$7.50</div>
+                    </div>
+                </div>
+                <div class="signature-item">
+                    <div class="item-image">🍓</div>
+                    <div class="item-info">
+                        <div class="item-name">Acai Bowl</div>
+                        <div class="item-desc">Fresh berries & granola</div>
+                        <div class="item-price">$8.50</div>
+                    </div>
+                </div>
+                <div class="signature-item">
+                    <div class="item-image">☕</div>
+                    <div class="item-info">
+                        <div class="item-name">Specialty Coffee</div>
+                        <div class="item-desc">Single-origin beans</div>
+                        <div class="item-price">$5.00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Order Section -->
+    <section id="preorder" class="preorder-section">
+        <div class="container">
+            <h2>Quick Pre-Order</h2>
+            <p>Select your items, choose pickup time, and we'll have it ready.</p>
+            <form class="preorder-form" onsubmit="handlePreOrder(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Full name">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+65 9xxx xxxx">
+                </div>
+                <div class="form-group">
+                    <label for="item">Select Item</label>
+                    <select id="item" name="item" required>
+                        <option value="">-- Choose from menu --</option>
+                        <option value="Butter Croissant - $6.50">Butter Croissant - $6.50</option>
+                        <option value="Fried Chicken Bake - $8.00">Fried Chicken Bake - $8.00</option>
+                        <option value="Avocado Toast - $9.50">Avocado Toast - $9.50</option>
+                        <option value="Spicy Egg Wrap - $7.50">Spicy Egg Wrap - $7.50</option>
+                        <option value="Acai Bowl - $8.50">Acai Bowl - $8.50</option>
+                        <option value="Specialty Coffee - $5.00">Specialty Coffee - $5.00</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="pickup">Pickup Time</label>
+                    <select id="pickup" name="pickup" required>
+                        <option value="">-- Select time --</option>
+                        <option value="7:00 AM">7:00 AM</option>
+                        <option value="7:30 AM">7:30 AM</option>
+                        <option value="8:00 AM">8:00 AM</option>
+                        <option value="8:30 AM">8:30 AM</option>
+                        <option value="9:00 AM">9:00 AM</option>
+                        <option value="9:30 AM">9:30 AM</option>
+                        <option value="10:00 AM">10:00 AM</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="location">Pickup Location</label>
+                    <select id="location" name="location" required>
+                        <option value="">-- Choose location --</option>
+                        <option value="Raffles Place">Raffles Place</option>
+                        <option value="Marina Bay">Marina Bay</option>
+                        <option value="Shenton Way">Shenton Way</option>
+                        <option value="Tanjong Pagar">Tanjong Pagar</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="special">Special Requests (Optional)</label>
+                    <textarea id="special" name="special" rows="3" placeholder="Any dietary restrictions or preferences?"></textarea>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="form-submit">Confirm Order</button>
+                    <button type="reset" class="form-reset">Clear</button>
+                </div>
+                <div class="form-message" id="preorderMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- CBD Convenience Section -->
+    <section id="cbd" class="cbd-section">
+        <div class="container">
+            <div class="cbd-grid">
+                <div class="cbd-image">
+                    🏙️
+                </div>
+                <div class="cbd-text">
+                    <h2>Built for CBD Living</h2>
+                    <p>Located in the heart of Singapore's Central Business District. Multiple pickup points across Raffles Place, Marina Bay, Shenton Way, and Tanjong Pagar.</p>
+                    <ul class="convenience-list">
+                        <li>Express checkout in under 1 minute</li>
+                        <li>Peak-hour optimized service (7-10 AM)</li>
+                        <li>Premium office delivery available</li>
+                        <li>Loyalty rewards for regulars</li>
+                        <li>Corporate bulk orders welcome</li>
+                        <li>Flexible payment options</li>
+                    </ul>
+                    <button class="btn-primary" style="margin-top: 2rem;" onclick="document.getElementById('preorder').scrollIntoView()">
+                        Find Your Location
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section id="newsletter" class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Weekly Menu Updates</h2>
+                <p>Get exclusive access to our rotating specials and new artisan creations. Sign up for the weekly newsletter.</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSignup(event)">
+                    <input type="email" id="newsletterEmail" placeholder="your@email.com" required>
+                    <input type="text" id="newsletterName" placeholder="Your name" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+                <div class="newsletter-message" id="newsletterMessage"></div>
+
+                <!-- Update Email Section -->
+                <div class="update-email-section">
+                    <h3 style="margin-bottom: 0.5rem;">Already subscribed? Update your email</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.9;">Have a new email? We'll keep your preferences intact.</p>
+                    <form class="update-email-form" onsubmit="handleUpdateEmail(event)">
+                        <input type="email" id="oldEmail" placeholder="Your previous email" required>
+                        <input type="email" id="newEmail" placeholder="Your new email" required>
+                        <button type="submit">Update Email</button>
+                    </form>
+                    <div class="update-email-message" id="updateEmailMessage"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 AirConsole - Premium Breakfast Pre-Orders. All rights reserved.</p>
+            <p>📍 CBD Singapore | ☎️ +65 9xxx xxxx | 📧 hello@airconsole.sg</p>
+            <p style="font-size: 0.85rem; opacity: 0.8;">Crafted with care for Singapore's professionals.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Get site ID from URL
+        const siteId = new URLSearchParams(window.location.search).get('id') || '';
+
+        // Newsletter Signup
+        async function handleNewsletterSignup(event) {
+            event.preventDefault();
+            const email = document.getElementById('newsletterEmail').value;
+            const name = document.getElementById('newsletterName').value;
+            const messageEl = document.getElementById('newsletterMessage');
+
+            try {
+                const res = await fetch('https://techtravelthink.app.n8n.cloud/webhook/user-register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        action: 'register',
+                        email,
+                        name,
+                        websiteId: siteId,
+                        source: window.location.href,
+                        subscriptionType: 'weekly_menu_updates'
+                    })
+                });
+                const data = await res.json();
+                messageEl.textContent = data.success ? '✓ Subscribed! Check your inbox for the latest menu.' : (data.message || 'Subscription failed');
+                messageEl.className = data.success ? 'show' : 'show';
+                messageEl.style.color = data.success ? '#27ae60' : '#e74c3c';
+                
+                if (data.success) {
+                    document.getElementById('newsletterEmail').value = '';
+                    document.getElementById('newsletterName').value = '';
+                }
+            } catch(e) {
+                messageEl.textContent = 'Network error. Please try again.';
+                messageEl.className = 'show';
+                messageEl.style.color = '#e74c3c';
+            }
+        }
+
+        // Update Email
+        async function handleUpdateEmail(event) {
+            event.preventDefault();
+            const oldEmail = document.getElementById('oldEmail').value;
+            const newEmail = document.getElementById('newEmail').value;
+            const messageEl = document.getElementById('updateEmailMessage');
+
+            try {
+                const res = await fetch('https://techtravelthink.app.n8n.cloud/webhook/user-register', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({
+                        action: 'update',
+                        oldEmail,
+                        newEmail,
+                        websiteId: siteId
+                    })
+                });
+                const data = await res.json();
+                
+                if (data.success) {
+                    messageEl.textContent = '✓ Email updated successfully!';
+                    messageEl.className = 'success show';
+                    document.getElementById('oldEmail').value = '';
+                    document.getElementById('newEmail').value = '';
+                } else {
+                    messageEl.textContent = data.message || 'Update failed';
+                    messageEl.className = 'error show';
+                }
+            } catch(e) {
+                messageEl.textContent = 'Network error. Please try again.';
+                messageEl.className = 'error show';
+            }
+        }
+
+        // Pre-Order Form Handler
+        function handlePreOrder(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const item = document.getElementById('item').value;
+            const quantity = document.getElementById('quantity').value;
+            const pickup = document.getElementById('pickup').value;
+            const location = document.getElementById('location').value;
+            const special = document.getElementById('special').value;
+            const messageEl = document.getElementById('preorderMessage');
+
+            // Show success message
+            messageEl.textContent = `✓ Order confirmed! ${name}, your ${quantity}x ${item} will be ready at ${pickup} at ${location}. Check your SMS for details.`;
+            messageEl.className = 'success';
+            
+            // Log order data
+            console.log({
+                name, phone, item, quantity, pickup, location, special, timestamp: new Date().toISOString()
+            });
+
+            // Reset form
+            setTimeout(() => {
+                event.target.reset();
+                messageEl.className = '';
+                messageEl.textContent = '';
+            }, 5000);
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '70px';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'var(--dark)';
+            navLinks.style.gap = '0';
+            navLinks.style.borderTop = '1px solid var(--primary)';
+        });
+    </script>
+
+<!-- byteforce-lead-form-injected -->
+<script>
+(function () {
+  var BYTEFORCE_WEBSITE_ID   = "website-8190";
+  var BYTEFORCE_WEBSITE_NAME = "weekeat";
+  var BYTEFORCE_WEBHOOK_URL  = "https://techtravelthink.app.n8n.cloud/webhook/user-register";
+
+  function findField(form, patterns) {
+    var candidates = form.querySelectorAll('input, textarea');
+    for (var i = 0; i < candidates.length; i++) {
+      var el = candidates[i];
+      var haystack = ((el.name || '') + ' ' + (el.id || '') + ' ' + (el.type || '') + ' ' + (el.placeholder || '')).toLowerCase();
+      for (var j = 0; j < patterns.length; j++) {
+        if (haystack.indexOf(patterns[j]) !== -1) return el;
+      }
+    }
+    return null;
+  }
+
+  function showMessage(form, text, isError) {
+    var el = form.querySelector('.byteforce-form-message');
+    if (!el) {
+      el = document.createElement('div');
+      el.className = 'byteforce-form-message';
+      el.style.marginTop = '12px';
+      el.style.fontSize = '14px';
+      el.style.fontFamily = 'inherit';
+      form.appendChild(el);
+    }
+    el.textContent = text;
+    el.style.color = isError ? '#dc2626' : '#059669';
+  }
+
+  function attach(form) {
+    if (form.dataset.byteforceBound === '1') return;
+    form.dataset.byteforceBound = '1';
+
+    var submitBtn = form.querySelector('button[type="submit"], input[type="submit"]') || form.querySelector('button');
+    var submitting = false;
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (submitting) return;
+
+      var emailEl = findField(form, ['email']);
+      var nameEl  = findField(form, ['name']) || form.querySelector('input[type="text"]');
+      var email   = emailEl ? emailEl.value.trim() : '';
+      var name    = nameEl ? nameEl.value.trim() : '';
+
+      if (!email) {
+        showMessage(form, 'Please enter a valid email address.', true);
+        return;
+      }
+
+      submitting = true;
+      var originalText = submitBtn ? submitBtn.textContent : null;
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+      }
+
+      fetch(BYTEFORCE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          action:      'register',
+          name:        name,
+          email:       email,
+          websiteId:   BYTEFORCE_WEBSITE_ID,
+          websiteName: BYTEFORCE_WEBSITE_NAME,
+          source:      window.location.origin,
+        }),
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('Request failed');
+          return res.json().catch(function () { return {}; });
+        })
+        .then(function () {
+          showMessage(form, "Thanks! We've received your submission.", false);
+          form.reset();
+        })
+        .catch(function () {
+          showMessage(form, 'Something went wrong. Please try again.', true);
+        })
+        .finally(function () {
+          submitting = false;
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+          }
+        });
+    });
+  }
+
+  function init() {
+    var forms = document.querySelectorAll('form');
+    for (var i = 0; i < forms.length; i++) attach(forms[i]);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
